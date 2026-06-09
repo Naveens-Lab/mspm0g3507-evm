@@ -12,7 +12,7 @@
 
 ## Overview
 
-A custom EVM (Evaluation Module) style development board built around the **TI MSPM0G3507** microcontroller. The project started as a personal deep-dive into schematic and PCB design — something I had always wanted to do coming from an embedded software background — and has grown into a platform I intend to keep expanding.
+A custom EVM (Evaluation Module) style development board built around the **TI MSPM0G3507** microcontroller. The project started as a personal deep-dive into schematic and PCB design  something I had always wanted to do coming from an embedded software background and has grown into a platform I intend to keep expanding.
 
 The board includes a **Microchip ATECC608A** hardware secure element, making it suitable for exploring hardware-backed cryptography, device authentication, and secure key storage on a board I designed myself. Beyond the learning aspect, I plan to build real applications here: IoT device authentication, secure bootloader prototyping, and more.
 
@@ -132,7 +132,7 @@ mspm0g3507-evm/
 
 I have spent 6+ years as an embedded software engineer  writing firmware for automotive EV , elevator controllers, medical devices, and defense systems. I have always worked *on top of* hardware that someone else designed. This project is me crossing that line: learning how the schematic becomes a PCB, how a PCB becomes a product, and how every decision made during layout shows up as a bug (or not) at bring-up.
 
-The ATECC608A is here because hardware-backed security is something I want to understand deeply — not just at the register level from firmware, but from the moment the footprint lands on the board.
+The ATECC608A is here because hardware-backed security is something I want to understand deeply not just at the register level from firmware, but from the moment the footprint lands on the board.
 
 This is REV A. It will not be perfect. That is the point.
 
