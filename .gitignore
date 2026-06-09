@@ -1,43 +1,40 @@
-# For PCBs designed using KiCad: https://www.kicad.org/
-# Format documentation: https://kicad.org/help/file-formats/
+# KiCad .gitignore — MSPM0 DevBoard
+# Reference: https://kicad.org/help/file-formats/
 
-# Temporary files
-*.000
+# ── Lock files (created when KiCad has files open) ──────────────
+~*
+*~
+*.lck
+
+# ── Backup files ─────────────────────────────────────────────────
 *.bak
 *.bck
 *.kicad_pcb-bak
 *.kicad_sch-bak
-*-backups
-*-cache*
 *-bak
-*-bak*
-*~
-~*
-_autosave-*
-\#auto_saved_files\#
-*.tmp
-*-save.pro
-*-save.kicad_pcb
+
+# ── KiCad auto-generated cache ───────────────────────────────────
 fp-info-cache
-~*.lck
-\#auto_saved_files#
+*-cache*
 
-# Netlist files (exported from Eeschema)
-*.net
+# ── KiCad backup folders ─────────────────────────────────────────
+*-backups/
 
-# Autorouter files (exported from Pcbnew)
-*.dsn
-*.ses
-
-# Exported BOM files
-*.xml
-*.csv
-
-# Archived Backups (KiCad 6.0)
-**/*-backups/*.zip
-
-# Local git-based history (KiCad 9.0+)
+# ── Local project/session settings (machine-specific) ────────────
+*.kicad_prl
 .history
 
-# Local project settings
-*.kicad_prl
+# ── Auto-save / temp ─────────────────────────────────────────────
+_autosave-*
+*.tmp
+\#auto_saved_files#
+*-save.pro
+*-save.kicad_pcb
+
+# ── Exported outputs (regenerate from source) ────────────────────
+*.net
+*.dsn
+*.ses
+*.xml
+*.csv
+*.000

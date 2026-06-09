@@ -18,11 +18,15 @@ The board includes a **Microchip ATECC608A** hardware secure element, making it 
 
 ---
 
-## Board Preview
+## Schematic
 
-| Schematic | PCB (3D) |
-|---|---|
-| *(see `/kicad` folder)* | REV A — Naveen's LAB |
+![Schematic](assets/schematic.png)
+
+---
+
+## PCB — REV A
+
+![PCB 3D View](assets/pcb_3d_top.png)
 
 ---
 
@@ -43,7 +47,7 @@ The board includes a **Microchip ATECC608A** hardware secure element, making it 
 
 ---
 
-## Connectivity 
+## Connectivity
 
 ```
                     +3V3
@@ -69,11 +73,11 @@ The board includes a **Microchip ATECC608A** hardware secure element, making it 
 - **Secure element first-class** — ATECC608A on dedicated I2C0 bus with proper pull-ups and decoupling
 - **Debug-friendly** — TC2030 Tag-Connect for SWD; no bulky 10-pin IDC connector needed
 - **USB-C native** — power and UART over a single cable; USBLC6 ESD protection on data lines
-- **Expandable** — designed with future revisions in mind; more peripherals, shields, and features planned
+- **Expandable** — designed with future revisions in mind; more peripherals and features planned
 
 ---
 
-## Planned Features & Roadmap
+## Roadmap
 
 - [x] MCU schematic — MSPM0G3507SPTR (LQFP-64)
 - [x] ATECC608A-SSHDA secure element circuit (I2C0)
@@ -82,11 +86,12 @@ The board includes a **Microchip ATECC608A** hardware secure element, making it 
 - [x] TC2030 SWD debug header
 - [x] 8 MHz HFXT crystal circuit
 - [x] PCB layout — REV A (in progress, pre-fab)
-- [x ] DRC clean pass + design review
+- [x] DRC clean pass + design review
+- [ ] Gerber generation and PCB fabrication
 - [ ] Board bring-up firmware (MSPM0 DriverLib, bare-metal)
 - [ ] ATECC608A I2C driver + device wake-up sequence
 - [ ] ATECC608A provisioning (TrustFLEX / TrustCustom configuration)
-- [ ] Hardware-backed device authentication demo (ECC508 challenge-response)
+- [ ] Hardware-backed device authentication demo (ECC challenge-response)
 - [ ] Secure bootloader prototype using ATECC608A key storage
 - [ ] USB CDC firmware (v2 — remove CH340E dependency)
 - [ ] QSPI external flash (future revision)
@@ -107,14 +112,17 @@ The board includes a **Microchip ATECC608A** hardware secure element, making it 
 
 ```
 mspm0g3507-evm/
+├── assets/
+│   ├── schematic.png                        # Schematic export
+│   └── pcb_3d_top.png                       # PCB 3D render — REV A
 ├── kicad/
 │   ├── MSPM0_DevBoard.kicad_pro
 │   ├── MSPM0_DevBoard.kicad_sch
 │   ├── MSPM0_DevBoard.kicad_pcb
-│   └── MSPM0G3507_Sym_Symbl.kicad_sym     # Custom MCU symbol library
-├── datasheets/                              # MSPM0G3507, ATECC608A, CH340E, SPX3819
-├── gerbers/                                 # Generated at fab-ready milestone
-├── firmware/                                # Bring-up and demo firmware
+│   └── MSPM0G3507_Sym_Symbl.kicad_sym       # Custom MCU symbol library
+├── datasheets/                               # MSPM0G3507, ATECC608A, CH340E, SPX3819
+├── gerbers/                                  # Generated at fab-ready milestone
+├── firmware/                                 # Bring-up and demo firmware
 └── README.md
 ```
 
@@ -122,9 +130,9 @@ mspm0g3507-evm/
 
 ## Why This Project?
 
-I have spent 6+ years as an embedded software engineer  writing firmware for automotive , elevator controllers, medical devices, and defense systems. I have always worked *on top of* hardware that someone else designed. This project is me crossing that line: learning how the schematic becomes a PCB, how a PCB becomes a product, and how every decision made during layout shows up as a bug (or not) at bring-up.
+I have spent 6+ years as an embedded software engineer  writing firmware for automotive EV , elevator controllers, medical devices, and defense systems. I have always worked *on top of* hardware that someone else designed. This project is me crossing that line: learning how the schematic becomes a PCB, how a PCB becomes a product, and how every decision made during layout shows up as a bug (or not) at bring-up.
 
-The ATECC608A is here because hardware-backed security is something I want to understand deeply  not just at the register level from firmware, but from the moment the footprint lands on the board.
+The ATECC608A is here because hardware-backed security is something I want to understand deeply — not just at the register level from firmware, but from the moment the footprint lands on the board.
 
 This is REV A. It will not be perfect. That is the point.
 
@@ -133,14 +141,14 @@ This is REV A. It will not be perfect. That is the point.
 ## License
 
 Hardware design files (schematic, PCB) licensed under [CERN Open Hardware Licence v2 - Permissive (CERN-OHL-P)](https://ohwr.org/cern_ohl_p_v2.txt).  
-Firmware (when added) licensed under MIT.
+Firmware  licensed under MIT.
 
 ---
 
 ## Author
 
 **Naveen** — Embedded Systems Engineer  
-Firmware architecture · ISO 26262 ASIL-D · Hardware-firmware integration  
-Automotive · Industrial · Defense
+Firmware architecture ·Hardware-firmware integration  
+Automotive · Industrial · Power Electronics
 
 [![GitHub](https://img.shields.io/badge/GitHub-Naveens--Lab-black?logo=github)](https://github.com/Naveens-Lab)

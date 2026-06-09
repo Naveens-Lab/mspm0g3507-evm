@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "MSP-M0-Test_sym")(type "KiCad")(uri "${KIPRJMOD}/MSP-M0-Test_sym.kicad_sym")(options "")(descr ""))
+  (lib (name "MSPM0G3507_Sym_Symbl")(type "KiCad")(uri "${KIPRJMOD}/MSPM0G3507_Sym_Symbl.kicad_sym")(options "")(descr ""))
+)
